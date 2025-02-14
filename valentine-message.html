@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine</title>
+    <link rel="stylesheet" href="message-style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="valentines">
+            <div class="envelope"></div>
+            <div class="front"></div>
+            <div id="card" class="card">
+                <div class="text">Happy</br> Valentine's</br> Day!</div>
+                <div class="heart"></div>
+            </div>
+            <div class="hearts">
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+                <div class="four"></div>
+                <div class="five"></div>
+            </div>
+        </div>
+        <div class="shadow"></div>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>💖 I love You! 💖</h2>
+            <p>Happy Valentine's Day, Fiona! 💕</p>
+            <p>Có lẽ là giờ này đã muộn rồi và em sẽ đọc vào ngày mai nhưng mà anh vẫn sẽ gửi những lời này tới em. Anh cảm ơn em rất nhiều vì đã luôn yêu anh chân thành đến vậy. Anh biết ơn khi em dành nhiều tình cảm cho anh tới vậy và anh cũng yêu em Hie à. Đây là Valentine đầu tiên của tụi mình. Anh có một chút vụng về xin em thông cảm, anh không giỏi làm gì cả nên anh cũng rất là đắn đo khi làm quà cho em. Anh sợ em sẽ không thích Nhưng mà mong em sẽ thích món quà này. Anh đang cố gắng để trở nên tốt hơn để có thể làm em vui vẻ và xinh đẹp hơn từng ngày. Anh mong em lúc nào cũng vui vẻ hạnh phúc và khoẻ mạnh. Anh mong cho tình yêu của tụi mình lúc nào cũng được trọn vẹn và xinh đẹp. Mong là cũng sẽ cùng em đi tới ngày cuối cùng của cuộc đời. Anh yêu em nhiều.</p>
+            <p>Your Boyfriend,</p>
+            <p>Pham Ngoc Bao</p>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="animation.js"></script>
+
+<script>
+    let heart = document.getElementById("card");
+    let popup = document.getElementById("popup");
+    let closeButtons = document.querySelectorAll(".close");
+
+    // Show popup when heart is clicked
+    heart.addEventListener("click", function () {
+        popup.style.visibility = "visible";
+    });
+
+    // Hide popup when close button is clicked
+    closeButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            popup.style.visibility = "hidden";
+        });
+    });
+
+    // Hide popup when clicking outside the popup-content
+    window.addEventListener("click", function (event) {
+        if (event.target.closest(".popup-content") === null && event.target !== heart) {
+            popup.style.display = "hidden";
+        }
+    });
+</script>
+
+</html>
